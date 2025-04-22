@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengaluru House Price Predictor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1 class="title">Bengaluru House Price Predictor</h1>
+        <div class="card">
+            <div class="form-group">
+                <label for="uiSqft" class="retro-label">Area (Square Feet)</label>
+                <input type="number" id="uiSqft" class="retro-input" name="Squareft" value="1000" min="100" step="1" placeholder="Enter area in sqft" onfocus="this.select()">
+            </div>
+            <div class="form-group">
+                <label class="retro-label">BHK</label>
+                <div class="switch-field">
+                    <input type="radio" id="radio-bhk-1" name="uiBHK" value="1"/>
+                    <label for="radio-bhk-1" class="retro-radio">1</label>
+                    <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked/>
+                    <label for="radio-bhk-2" class="retro-radio">2</label>
+                    <input type="radio" id="radio-bhk-3" name="uiBHK" value="3"/>
+                    <label for="radio-bhk-3" class="retro-radio">3</label>
+                    <input type="radio" id="radio-bhk-4" name="uiBHK" value="4"/>
+                    <label for="radio-bhk-4" class="retro-radio">4</label>
+                    <input type="radio" id="radio-bhk-5" name="uiBHK" value="5"/>
+                    <label for="radio-bhk-5" class="retro-radio">5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="retro-label">Bathrooms</label>
+                <div class="switch-field">
+                    <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1"/>
+                    <label for="radio-bath-1" class="retro-radio">1</label>
+                    <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
+                    <label for="radio-bath-2" class="retro-radio">2</label>
+                    <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
+                    <label for="radio-bath-3" class="retro-radio">3</label>
+                    <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4"/>
+                    <label for="radio-bath-4" class="retro-radio">4</label>
+                    <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5"/>
+                    <label for="radio-bath-5" class="retro-radio">5</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="uiLocations" class="retro-label">Location</label>
+                <select id="uiLocations" class="retro-select">
+                    <option value="" disabled selected>Choose a Location</option>
+                </select>
+            </div>
+            <button id="estimateButton" class="retro-button" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+            <div id="uiEstimatedPrice" class="result"></div>
+        </div>
+    </div>
+</body>
+</html>
