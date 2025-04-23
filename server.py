@@ -63,11 +63,7 @@ def predict_options():
     """Handle CORS preflight requests."""
     response = jsonify({'status': 'OK'})
     return add_cors_headers(response)
-
-if __name__ == "__main__":
-    print("Starting Flask server...")
-    if not os.path.exists(r'home_prices_model_new.pickle') or not os.path.exists(r'columns_new.json'):
-        print("Error: Model or columns file missing. Run train.py first.")
-    else:
-        load_details()
-        app.run(debug=True, port=5000)
+if not os.path.exists(r'home_prices_model_new.pickle') or not os.path.exists(r'columns_new.json'):
+    print("Error: Model or columns file missing. Run train.py first.")
+else:
+    load_details()
