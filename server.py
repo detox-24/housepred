@@ -11,6 +11,15 @@ def add_cors_headers(response):
     response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
     return response
 
+
+@app.route('/<path:filename>')
+def serve_static_file(filename):
+    """Serve static files like CSS and JS."""
+    try:
+        return send_file(filename)
+    except Exception as e:
+        return add_cors_headers(jsonify({'error': str(e)})), 404
+
 @app.route('/')
 def serve_html():
     """Serve the frontend HTML."""
