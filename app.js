@@ -31,7 +31,7 @@ function onClickedEstimatePrice() {
       return;
   }
 
-  var url = "http://127.0.0.1:5000/predict"; 
+  var url = "https://housepredmodel.onrender.com/predict"; 
 
   $.post(url, {
       total_sqft: parseFloat(sqft.value),
@@ -54,7 +54,7 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log("Document loaded");
-  var url = "http://127.0.0.1:5000/get_location";
+  var url = "https://housepredmodel.onrender.com/get_location";
   $.get(url, function(data, status) {
       console.log("Got response for location_names request");
       if (data && data.locations) {
